@@ -1,0 +1,287 @@
+﻿@charset "UTF-8";
+
+/*! =================================================
+	Theme Name: Jussi Party 2018
+	Description: CSS desenvolvido para Jussi.
+	Author: Pedro Henrick
+	Empresa: Jussi
+	Version: 2.0
+	================================================= */
+	
+// ===============================================================
+/* @IMPORTS */
+// ===============================================================
+
+@font-face {
+  font-family: 'Gotham-ExtraLight';
+  src: url('../fonts/hinted-Gotham-ExtraLight.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/hinted-Gotham-ExtraLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('../fonts/hinted-Gotham-ExtraLight.woff') format('woff'), /* Modern Browsers */
+     url('../fonts/hinted-Gotham-ExtraLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/hinted-Gotham-ExtraLight.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 700;
+   font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('../fonts/hinted-Gotham-Light.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/hinted-Gotham-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('../fonts/hinted-Gotham-Light.woff') format('woff'), /* Modern Browsers */
+     url('../fonts/hinted-Gotham-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/hinted-Gotham-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 700;
+   font-style: normal;
+}
+ 
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('../fonts/hinted-Gotham-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/hinted-Gotham-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+     url('../fonts/hinted-Gotham-Bold.woff') format('woff'), /* Modern Browsers */
+     url('../fonts/hinted-Gotham-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+     url('../fonts/hinted-Gotham-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+   font-weight: 700;
+   font-style: normal;
+}
+
+ @keyframes zoom {
+	0%   {transform: scale(1);}
+	100% {transform: scale(.9);}
+}
+
+body {
+	font-family: 'Gotham-Light';
+  	margin: 0;
+	  padding: 0;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  align-items: center;
+	  height: 100vh;
+	  width: 100%;
+}
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1110px!important;
+	text-align: center;
+	width: 100%!important;
+}
+
+.show-mobile {
+	display: none;
+	visibility: hidden;
+	@media only screen and (max-width: 768px) {
+		display: block;
+		visibility: visible;
+	}
+}
+
+.hide-mobile {
+	display: block;
+	visibility: visible;
+	@media only screen and (max-width: 768px) {
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.logo {
+	text-align: center;
+	img {
+		max-width: 500px;
+		padding: 22px 0;
+		@media only screen and (max-width: 768px) {
+			max-width: 150px;
+		}
+	}
+}
+
+header {
+    display: inline-block;
+    height: auto;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+	opacity: 0.5;
+	@media only screen and (max-width: 768px) {
+		z-index: 101;
+	}
+}
+
+#mask {
+	background-color: #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.6;
+	z-index: -99;
+	@media only screen and (max-width: 768px) {
+		z-index: 99;
+	}
+}
+
+.video-desktop {
+	position: fixed;
+	right: 0; 
+	bottom: 0;
+	min-width: 100%; 
+	width: auto; 
+	height: auto;
+	z-index: -100;
+	@media only screen and (max-width: 768px) { display: none; }
+	iframe {
+		height: 100vh;
+		width: 100%;
+		transition: all .5s ease;
+		transform: scale(1.4);
+	}
+}
+
+// contador
+#contador {
+	font-family: 'Gotham-ExtraLight';
+	transition: all .5s ease;
+  	@media only screen and (max-width: 768px) { z-index: 100; }
+
+  	.txt-bloco-contador {
+    	letter-spacing: 20px;
+  		text-shadow: 1px 1px 1px #fff;
+  	}
+
+  	.txt-bloco-time {
+  		font-family: 'Gotham-Light';
+  	}
+
+	.txt-bloco-contador,
+	.txt-bloco-time {
+		font-size: 80px;
+		color: #00ff01;
+		text-align: center;
+		text-transform: uppercase;
+		@media only screen and (max-width: 768px) {
+			font-size: 40px;
+		}
+	}
+
+	.txt-bloco-contador-down {
+		letter-spacing: 0;
+		text-transform: none;
+		@media only screen and (max-width: 768px) {
+			font-size: 30px;
+		}
+	}
+
+	.txt-bloco-time {
+		font-size: 150px;
+		height: auto;
+		padding-right: 0;
+		text-align: center;
+		@media only screen and (max-width: 768px) {
+			font-size: 50px;
+		}
+	}
+
+	.contador {
+		height: auto;
+		text-align: center;
+	}
+
+	.bloco {
+		display: inline-block;
+		text-align: center;
+		vertical-align: top;
+	}
+	.colon {
+		color: #fff;
+		display: inline-block;
+		font-size: 60px;
+		font-weight: bold;
+		@media only screen and (max-width: 768px) {
+			font-size: 20px;
+		}
+	}
+	.txt-time {
+		color: #fff;
+		font-size: 25px;
+		font-weight: bold;
+		@media only screen and (max-width: 768px) {
+			font-size: 15px;
+		}
+	}
+}
+
+// playgame
+#play-game {
+	background-color: #fff;
+	border-radius: 23px;
+	cursor: pointer;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding: 15px;
+	width: 300px;
+	transition: all .3s ease;
+	animation: zoom .8s alternate infinite ease;
+	&:hover {
+		background-color: #00ff01;
+	}
+	.txt-play {
+		color: #000;
+		font-family: 'Gotham-Bold';
+		font-size: 18px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+#bg-end {
+	display: none;
+}
+
+#play-game {
+	@media only screen and (max-width: 768px) { display: none; }
+}
+
+
+@media only screen and (max-width: 768px) {
+	.image-mobile {
+		background: url('../images/party.jpg') center center;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		transition: all .5s ease;
+		width: 100%;
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+
+// COMECOU
+.go-party {
+	#mask {
+		z-index: 0;
+	}
+	#bg-end {
+		z-index: 0;
+		h2 { 
+			background: #81d48c;
+			color: #fff;
+			width: 300px;
+			margin: 0 auto;
+			margin-bottom: 30px;
+		 }
+		.ramonzinh {
+			width: 30%;
+		}
+	}
+	.image-mobile {
+		z-index: -1;
+	}
+}

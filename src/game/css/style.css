@@ -1,0 +1,192 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Righteous', cursive;
+    text-align: center;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 500px;
+}
+
+canvas {
+    margin-top: -50px;
+}
+
+.bus {
+    position: absolute;
+    top: -10px;
+    z-index: 1;
+    max-width: 200px;
+    left: calc(50% - 100px);
+}
+
+.bus-go {
+    animation: bus 1s;
+}
+
+
+.canvas-wrapper-container {
+    padding: 0 20px 0 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.canvas-wrapper-container .boss,
+.canvas-wrapper-container .people {
+    position: absolute;
+    bottom: 20px;
+    right: 86%;
+}
+.canvas-wrapper-container .people {
+    right: inherit;
+    left: 86%;
+}
+
+.canvas-wrapper-container .boss::before {
+    content: url('../images/enemy-bug.png');
+}
+.canvas-wrapper-container .people::before {
+    content: url('../images/char-boy-left.png');
+}
+
+.canvas-wrapper {
+    position: relative;
+    width: min-content;
+    margin: 0 auto;
+
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, .6);
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.feedback {
+    position: absolute;
+    top: calc(50% - 110px);
+    left: calc(50% - 120px);
+    z-index: 4;
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 5px;
+    padding: 10px 20px;
+    opacity: 0;
+    width: 240px;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.overlay.active {
+    opacity: 1;
+}
+
+.feedback.active {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.reinit {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.reinit:hover {
+    background-color: #357a38;
+}
+
+.feedback .title, .feedback .subtitle {
+    margin: 0;
+}
+
+@keyframes bus {
+    0% { left: calc(50% - 100px); }
+    100% { left: -1000px; }
+}
+
+.katiau {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    width: 80px;
+    margin: 0;
+    text-decoration: none;
+    color: black;
+}
+
+.katiau img {
+    width: 100%;
+    display: inline-block;
+}
+
+.katiau:before {
+    content: 'powered by:';
+    font-size: 12px;
+}
+
+.katiau:after {
+    content: '';
+    background: url('http://bruno.show/images/xou.png') 0 0 no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: calc(50% - 40px);
+    bottom: 0px;
+    width: 100%;
+    display: block;
+    height: 20px;
+    animation: chow 1s infinite;
+}
+
+@keyframes chow {
+    0% {transform: rotate(10deg)}
+    5% {transform: rotate(-10deg)}
+    10% {transform: rotate(10deg)}
+    15% {transform: rotate(-10deg)}
+    20% {transform: rotate(10deg)}
+    25% {transform: rotate(-10deg)}
+    30% {transform: rotate(10deg)}
+    35% {transform: rotate(-10deg)}
+    40% {transform: rotate(10deg)}
+    45% {transform: rotate(-10deg)}
+    50% {transform: rotate(10deg)}
+    55% {transform: rotate(-10deg)}
+    60% {transform: rotate(10deg)}
+    65% {transform: rotate(-10deg)}
+    70% {transform: rotate(10deg)}
+    75% {transform: rotate(-10deg)}
+    80% {transform: rotate(10deg)}
+    85% {transform: rotate(-10deg)}
+    90% {transform: rotate(10deg)}
+    95% {transform: rotate(-10deg)}
+    100% {transform: rotate(10deg)}
+}
+
+.control {
+    width: 100px;
+    position: absolute;
+    top: 75px;
+    right: 0;
+    z-index: 1;
+}
